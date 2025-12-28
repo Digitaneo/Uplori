@@ -1,0 +1,232 @@
+/* ================= GLOBAL RESET ================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --slate: #475569;
+    --light-bg: #f8fafc;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #ffffff;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.vv-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+.vv-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.vv-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.vv-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.vv-logo img { height: 35px; }
+
+.vv-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.vv-nav a {
+    text-decoration: none;
+    color: var(--slate);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.vv-nav a.active, .vv-nav a:hover { color: var(--primary); }
+
+/* ================= HERO ================= */
+.vv-hero {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.vv-badge {
+    background: #e0e7ff;
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.vv-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 20px 0;
+    color: var(--dark);
+}
+
+.vv-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--slate);
+    font-size: 1.1rem;
+}
+
+/* ================= SECTIONS & CARDS ================= */
+.vv-section { padding: 80px 0; }
+.vv-bg-light { background: var(--light-bg); }
+
+.vv-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.vv-card-simple {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+}
+
+.vv-icon-box { font-size: 2rem; margin-bottom: 15px; }
+
+.vv-section-header { text-align: center; margin-bottom: 40px; }
+
+.vv-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.vv-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.vv-check { color: #10b981; font-weight: bold; }
+
+.vv-disclaimer {
+    margin-top: 40px;
+    padding: 25px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+}
+
+.vv-disclaimer-title { font-weight: 700; color: #9a3412; margin-bottom: 10px; }
+
+/* ================= FOOTER ================= */
+.vv-footer {
+    background: var(--dark);
+    color: #cbd5e1;
+    padding: 60px 0 30px;
+}
+
+.vv-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.vv-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.vv-footer-brand img {
+    height: 35px;
+}
+
+.vv-footer-text {
+    max-width: 350px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.vv-footer-col h4 { color: white; margin-bottom: 20px; }
+.vv-footer-col a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: 0.2s; }
+.vv-footer-col a:hover { color: var(--primary); }
+
+.vv-footer-bottom { text-align: center; padding-top: 30px; font-size: 0.8rem; color: #64748b; }
+
+/* ================= MOBILE OPTIMIZATION ================= */
+@media (max-width: 768px) {
+    .vv-header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .vv-nav {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid var(--border);
+        padding-top: 15px;
+        gap: 15px;
+    }
+
+    .vv-nav a { font-size: 0.85rem; }
+
+    .vv-grid-2 { grid-template-columns: 1fr; }
+    
+    .vv-footer-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 30px;
+    }
+
+    .vv-footer-brand {
+        justify-content: center; 
+    }
+
+    .vv-footer-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vv-footer-text {
+        margin: 0 auto;
+    }
+}

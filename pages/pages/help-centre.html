@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs — VertoViral</title>
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.webp">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        /* تنسيقات خاصة بقسم الأسئلة الشائعة */
+        .vv-faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+        .vv-faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        .vv-faq-question:hover { color: #007bff; }
+        
+        .vv-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .vv-faq-item.active .vv-faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+        .vv-faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        .vv-faq-item.active .vv-faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+
+<header class="vv-header">
+    <div class="vv-container vv-header-inner">
+        <a href="../" class="vv-logo">
+            <img src="../assets/Logo.svg" alt="VertoViral Logo">
+            <span>VertoViral</span>
+        </a>
+        <nav class="vv-nav">
+            <a href="../">Home</a>
+            <a href="./about-us">About Us</a>
+            <a href="./contact-us">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="vv-hero">
+        <div class="vv-container">
+            <span class="vv-badge">Help Center</span>
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about starting your journey with VertoViral and ClickFunnels.</p>
+        </div>
+    </section>
+
+    <section class="vv-section">
+        <div class="vv-container vv-narrow-content">
+            <div class="vv-card-simple" style="padding: 10px;">
+                
+                <div class="vv-faq-item">
+                    <button class="vv-faq-question">
+                        Do I need any technical skills or coding knowledge?
+                        <span class="vv-faq-icon">+</span>
+                    </button>
+                    <div class="vv-faq-answer">
+                        <p>Absolutely not. VertoViral is built specifically for non-tech entrepreneurs. Our drag-and-drop editor allows you to build stunning pages just by clicking your mouse. If you can send an email, you can build a funnel.</p>
+                    </div>
+                </div>
+
+                <div class="vv-faq-item">
+                    <button class="vv-faq-question">
+                        Can I cancel my subscription at any time?
+                        <span class="vv-faq-icon">+</span>
+                    </button>
+                    <div class="vv-faq-answer">
+                        <p>Yes, you are never locked into a long-term contract. You can cancel your account at any time from your dashboard with just a few clicks. No questions asked.</p>
+                    </div>
+                </div>
+
+                <div class="vv-faq-item">
+                    <button class="vv-faq-question">
+                        Is this suitable for beginners?
+                        <span class="vv-faq-icon">+</span>
+                    </button>
+                    <div class="vv-faq-answer">
+                        <p>100%. In fact, most of our successful users started with zero experience. We provide templates, training, and a simple interface to ensure you succeed from day one.</p>
+                    </div>
+                </div>
+
+                <div class="vv-faq-item">
+                    <button class="vv-faq-question">
+                        What happens if I get stuck?
+                        <span class="vv-faq-icon">+</span>
+                    </button>
+                    <div class="vv-faq-answer">
+                        <p>We have a world-class support team ready to help, plus an extensive knowledge base and a community of entrepreneurs who are always willing to lend a hand.</p>
+                    </div>
+                </div>
+
+                <div class="vv-faq-item">
+                    <button class="vv-faq-question">
+                        Is the 3-month offer really $99 total?
+                        <span class="vv-faq-icon">+</span>
+                    </button>
+                    <div class="vv-faq-answer">
+                        <p>Yes! For a limited time, you can get full access to the Growth plan for 3 months for a one-time payment of $99. This is a massive discount from the regular monthly price.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="vv-footer">
+    <div class="vv-container vv-footer-inner">
+        <div class="vv-footer-grid">
+            <div class="vv-footer-main">
+                <div class="vv-footer-brand">
+                    <img src="../assets/Logo.svg" alt="VertoViral Logo"> 
+                    <span>VertoViral</span>
+                </div>
+                <p class="vv-footer-text">Helping creators and businesses discover smarter automation and marketing tools for sustainable online growth.</p>
+            </div>
+            <div class="vv-footer-col">
+                <h4>Company</h4>
+                <a href="./about-us">About Us</a>
+                <a href="./contact-us">Contact Us</a>
+            </div>
+            <div class="vv-footer-col">
+                <h4>Legal</h4>
+                <a href="./privacy-policy">Privacy Policy</a>
+                <a href="./terms-of-service">Terms of Service</a>
+                <a href="./refund-policy">Refund Policy</a>
+            </div>
+        </div>
+        <div class="vv-footer-bottom">
+            © 2026 VertoViral. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // سكربت لجعل الأسئلة تفتح وتغلق عند النقر
+    document.querySelectorAll('.vv-faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            
+            // إغلاق أي سؤال آخر مفتوح (اختياري)
+            document.querySelectorAll('.vv-faq-item').forEach(item => {
+                if (item !== faqItem) item.classList.remove('active');
+            });
+
+            // فتح أو إغلاق السؤال الحالي
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

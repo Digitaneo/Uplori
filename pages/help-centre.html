@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Uplori.com</title>
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base CSS Styles (Retained for consistency) */
+        :root {
+            --primary-color: #007bff; /* Blue */
+            --secondary-color: #343a40; /* Dark Grey/Black */
+            --light-bg: #f8f9fa; /* Light background for sections */
+            --text-color: #495057;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            direction: ltr;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin-left: 25px;
+        }
+
+        .nav ul li a {
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        .nav ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Main Content - FAQ Specific Styling */
+        .faq-header {
+            background-color: var(--light-bg);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .faq-header h1 {
+            font-size: 3em;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .faq-section {
+            padding: 40px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Accordion Style (FAQ Item) */
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            background-color: #ffffff;
+            padding: 20px;
+            font-size: 1.15em;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            font-size: 1.05em;
+            color: var(--text-color);
+            /* This part would normally be controlled by JavaScript for collapsible behavior */
+            display: block; 
+        }
+
+        .faq-answer p {
+            margin-top: 10px;
+        }
+
+        .faq-icon {
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Footer Styling (Retained for consistency) */
+        .footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 40px 0 10px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+            min-width: 200px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1em;
+            margin-bottom: 18px;
+            color: #fff;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .email-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .email-form button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8em;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav ul {
+                margin-top: 15px;
+                padding-left: 0;
+                justify-content: center;
+            }
+
+            .nav ul li {
+                margin: 0 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-col {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="https://www.uplori.com/">
+                    <img src="https://assets.lightfunnels.com/account-81996/images_library/84203a16-b9de-4f03-aecd-1b33c0a41d2d.image.webp" alt="Uplori Logo">
+                    Uplori.com
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="https://www.uplori.com/">Home</a></li>
+                    <li><a href="https://www.uplori.com/pages/about-us">About us</a></li>
+                    <li><a href="https://www.uplori.com/pages/contact-us">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq-header">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>1. What is Uplori.com?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Uplori.com is an independent affiliate website dedicated to reviewing, explaining, and promoting powerful AI-driven automation tools. We aim to help creators and businesses find the best solutions to boost their productivity and streamline digital tasks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>2. How does Uplori.com make money?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Uplori.com operates as an <span class="highlight">independent affiliate partner</span>. We earn a commission when users click on the affiliate links provided on our site and sign up or purchase a service from the third-party platforms. This is at no extra cost to you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>3. Do I need an account to use the services promoted on Uplori?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You do not need an account for Uplori.com itself. However, to use the AI tools and services we promote, you will need to create an account directly with the respective third-party platform after clicking the affiliate link.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>4. Is Uplori.com affiliated with the promoted platforms?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we are an <span class="highlight">independent affiliate partner</span>. While we promote and review these tools, we do not own, operate, or control the promoted platforms. We simply guide you to their official pages.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>5. Are there any costs to use Uplori.com?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Browsing Uplori.com, reading our reviews, and accessing our resource guides is completely <span class="highlight">free</span>. The only potential cost would be if you choose to purchase or subscribe to a third-party tool after clicking our affiliate links.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>6. How do I use the affiliate links safely?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply click the link provided in the review or guide. You will be redirected to the official website of the service. We always recommend reviewing their privacy policy, terms of service, and refund policy before making any purchase.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>7. Can I share Uplori.com with friends or colleagues?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We encourage you to share our guides and reviews with anyone who is looking for time-saving AI and automation solutions for business or personal use.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-col">
+                    <h4>Join Our Email List</h4>
+                    <p>Join our email list for exclusive offers and the latest news.</p>
+                    <form class="email-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe me</button>
+                    </form>
+                </div>
+
+                <div class="footer-col">
+                    <h4>About Uplori</h4>
+                    <p>Your gateway to seamless social media automation. We help content creators and businesses streamline their digital presence through advanced tools.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="https://www.uplori.com/pages/about-us">About us</a></li>
+                        <li><a href="https://www.uplori.com/pages/contact-us">Contact us</a></li>
+                        <li><a href="https://www.uplori.com/pages/privacy-policy">Privacy policy</a></li>
+                        <li><a href="https://www.uplori.com/pages/refund-policy">Refund policy</a></li>
+                        <li><a href="https://www.uplori.com/pages/terms-of-service">Terms of service</a></li>
+                        <li><a href="https://www.uplori.com/pages/help-centre">Help centre</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>Available between 8AM to 8PM. Ready to answer your questions.</p>
+                    <p><a href="mailto:contact@uplori.com">contact@uplori.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    Disclaimer: Uplori.com is an independent affiliate website. We are not the official provider of the promoted service. We participate in affiliate marketing.
+                </p>
+                <p>
+                    &copy; 2025 uplori All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
